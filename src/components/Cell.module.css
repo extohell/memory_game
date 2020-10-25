@@ -1,0 +1,110 @@
+.cell {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-repeat: no-repeat;
+	background-position: center;
+
+	font-size: 60px;
+	font-weight: bold;
+}
+
+.closed {
+	background-color: #595959;
+	background-size: 0;
+
+	cursor: pointer;
+	color: transparent;
+}
+
+.opened,
+.done,
+.fail {
+	background-size: 60%;
+	pointer-events: none;
+}
+
+.opened {
+	background-color: #d6d6c2;
+}
+
+.done {
+	background-color: #70db70;
+}
+
+.fail {
+	background-color: #ff704d;
+}
+
+.bg0 {
+	background-image: url('../imgs/angular-icon-1.svg');
+}
+
+.bg1 {
+	background-image: url('../imgs/bootstrap-4.svg');
+}
+
+.bg2 {
+	background-image: url('../imgs/css3.svg');
+}
+
+.bg3 {
+	background-image: url('../imgs/git-icon.svg');
+}
+
+.bg4 {
+	background-image: url('../imgs/html-5.svg');
+}
+
+.bg5 {
+	background-image: url('../imgs/javascript.svg');
+}
+
+.bg6 {
+	background-image: url('../imgs/less.svg');
+}
+
+.bg7 {
+	background-image: url('../imgs/mysql.svg');
+}
+
+.bg8 {
+	background-image: url('../imgs/jquery-1.svg');
+}
+
+.bg9 {
+	background-image: url('../imgs/nodejs-icon.svg');
+}
+
+.bg10 {
+	background-image: url('../imgs/vue-js-1.svg');
+}
+
+.bg11 {
+	background-image: url('../imgs/stylus.svg');
+}
+
+.bg12 {
+	background-image: url('../imgs/sass-1.svg');
+}
+
+.bg13 {
+	background-image: url('../imgs/typescript.svg');
+}
+
+.bg14 {
+	background-image: url('../imgs/react.svg');
+}
+
+.bg15 {
+	background-image: url('../imgs/redux.svg');
+}
+
+.bg16 {
+	background-image: url('../imgs/php-1.svg');
+}
+
+.bg17 {
+	background-image: url('../imgs/python-5.svg');
+}
