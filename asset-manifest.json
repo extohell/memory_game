@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/memorygamedemo/static/css/main.8b2253c1.chunk.css",
+    "main.js": "/memorygamedemo/static/js/main.9948e484.chunk.js",
+    "main.js.map": "/memorygamedemo/static/js/main.9948e484.chunk.js.map",
+    "runtime-main.js": "/memorygamedemo/static/js/runtime-main.61b07b53.js",
+    "runtime-main.js.map": "/memorygamedemo/static/js/runtime-main.61b07b53.js.map",
+    "static/js/2.9cd2b8d9.chunk.js": "/memorygamedemo/static/js/2.9cd2b8d9.chunk.js",
+    "static/js/2.9cd2b8d9.chunk.js.map": "/memorygamedemo/static/js/2.9cd2b8d9.chunk.js.map",
+    "index.html": "/memorygamedemo/index.html",
+    "static/css/main.8b2253c1.chunk.css.map": "/memorygamedemo/static/css/main.8b2253c1.chunk.css.map",
+    "static/js/2.9cd2b8d9.chunk.js.LICENSE.txt": "/memorygamedemo/static/js/2.9cd2b8d9.chunk.js.LICENSE.txt",
+    "static/media/Cell.module.css": "/memorygamedemo/static/media/vue-js-1.4921ee76.svg",
+    "static/media/App.module.css": "/memorygamedemo/static/media/restart.61e1ef1f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.61b07b53.js",
+    "static/js/2.9cd2b8d9.chunk.js",
+    "static/css/main.8b2253c1.chunk.css",
+    "static/js/main.9948e484.chunk.js"
+  ]
+}
