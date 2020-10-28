@@ -5,13 +5,15 @@ body {
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
+
+	background-color: lightsteelblue;
 }
 
 * {
 	box-sizing: border-box;
-	font-family: sans-serif;
+	font-family: 'Luckiest Guy', cursive;
 }
 
-.root {
+#root {
 	position: relative;
 }

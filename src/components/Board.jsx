@@ -1,32 +1,47 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './Board.module.css';
+import cn from 'classnames';
 import Cell from './Cell';
 
 const changeCellStatus = (state, newStatus, ...id) => {
 	return state.map(cell => id.includes(cell.id) ? { ...cell, status: newStatus } : cell);
 };
 
-const Board = ({ layout }) => {
-	const [ cellsState, setCellsState ] = useState(layout);
+const Board = ({ cellsState, setCellsState, incMoves, gameStatus, setGameStatus, moves, setBestScore }) => {
 	const openedCells = useRef([]);
 
 	useEffect(() => {
 		if (openedCells.current.length === 2 && !cellsState.find(cell => cell.status === 'fail')) {
 			const opened = cellsState.filter(cell => openedCells.current.includes(cell.id));
 			if (opened[0].content === opened[1].content) {
-				setCellsState(cellsState => changeCellStatus(cellsState, 'done', opened[0].id, opened[1].id));
+				setTimeout(() => {
+					setCellsState(cellsState => changeCellStatus(cellsState, 'done', opened[0].id, opened[1].id));
+				}, 300);
 				openedCells.current = [];
 			} else {
-				setCellsState(cellsState => cellsState.map(cell => {
-					return cell.status === 'opened' ? { ...cell, status: 'fail' } : cell;
-				}));
+				setTimeout(() => {
+					setCellsState(cellsState => cellsState.map(cell => {
+						return cell.status === 'opened' ? { ...cell, status: 'fail' } : cell;
+					}));
+				}, 500);
 				setTimeout(() => {
 					setCellsState(cellsState => changeCellStatus(cellsState, 'closed', opened[0].id, opened[1].id));
 					openedCells.current = [];
-				}, 1000);
+				}, 1500);
 			}
+			incMoves();
 		}
-	}, [ cellsState ]);
+	}, [ cellsState, incMoves, setCellsState ]);
+
+	useEffect(() => {
+		if (cellsState.every(cell => cell.status === 'done')) {
+			setTimeout(() => {
+				setGameStatus('success');
+				setBestScore(moves);
+				localStorage.setItem('best-score', moves);
+			}, 500);
+		}
+	}, [ cellsState, setGameStatus, moves, setBestScore ]);
 
 	const onCLick = useCallback((id) => {
 		if (openedCells.current.length === 2) return;
@@ -42,6 +57,22 @@ const Board = ({ layout }) => {
 								 onClick={ onCLick }/>;
 				})
 			}
+			<div className={ cn(styles.start, {
+				[styles.hidden]: gameStatus === 'started',
+				[styles.success]: gameStatus === 'success'
+			}) }>
+				<span className={ cn(styles.start__text, {
+					[styles.hidden]: gameStatus !== 'ready'
+				}) } onClick={ () => setGameStatus('started') }>
+					Press to start
+				</span>
+				<span className={ cn(styles.success, {
+					[styles.hidden]: gameStatus !== 'success',
+				}) }>
+					Success<br/>
+					Moves: { moves }
+				</span>
+			</div>
 		</div>
 	);
 };

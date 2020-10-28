@@ -1,0 +1,33 @@
+.restart {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	right: -100px;
+	top: 20px;
+
+	background-color: transparent;
+	border: none;
+	background-image: url('./imgs/restart.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	cursor: pointer;
+	transition: transform 0.7s;
+}
+
+.restart:focus {
+	outline: none;
+}
+
+.restart:hover {
+	transform: rotate(360deg) scale(1.2);
+}
+
+.restart:active {
+	transform: rotate(360deg) scale(0.7);
+	transition: transform 0.5s;
+}
+
+@keyframes rotate {
+
+}
